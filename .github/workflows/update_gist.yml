@@ -1,4 +1,4 @@
-name: Update Mdo Statistics
+name: Update Mod Statistics
 
 on:
   schedule:
