@@ -21,4 +21,4 @@ jobs:
       - name: Install dependencies
         run: pip install requests
       - name: Run update script
-        run: python your_script.py
+        run: python modstatistics.py
