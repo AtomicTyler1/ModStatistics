@@ -77,7 +77,8 @@ def get_and_upload():
         "Breakable Windows": 'https://thunderstore.io/api/v1/package-metrics/AtomicStudio/Breakable_Windows/',
         "Charging Divebell": 'https://thunderstore.io/api/v1/package-metrics/AtomicStudio/Charging_Divebell/',
         "Toilet Paper Valuables": 'https://thunderstore.io/api/v1/package-metrics/AtomicStudio/Toilet_Paper_Valuables/',
-        "Speedy Escalators": 'https://thunderstore.io/api/v1/package-metrics/AtomicStudio/Speedy_Escalators/'
+        "Speedy Escalators": 'https://thunderstore.io/api/v1/package-metrics/AtomicStudio/Speedy_Escalators/',
+        "Atomics Cosmetics PEAK": 'https://thunderstore.io/api/v1/package-metrics/AtomicStudio/Atomics_Cosmetics_PEAK'
     }
 
     total_downloads = 0
