@@ -79,7 +79,8 @@ def get_and_upload():
         "Toilet Paper Valuables": 'https://thunderstore.io/api/v1/package-metrics/AtomicStudio/Toilet_Paper_Valuables/',
         "Speedy Escalators": 'https://thunderstore.io/api/v1/package-metrics/AtomicStudio/Speedy_Escalators/',
         "Atomics Cosmetics PEAK": 'https://thunderstore.io/api/v1/package-metrics/AtomicStudio/Atomics_Cosmetics_PEAK',
-        "Depleting Excess Extra Stamina": 'https://thunderstore.io/api/v1/package-metrics/AtomicStudio/Depleting_Excess_Extra_Stamina'
+        "Depleting Excess Extra Stamina": 'https://thunderstore.io/api/v1/package-metrics/AtomicStudio/Depleting_Excess_Extra_Stamina',
+        "Green Screen": 'https://thunderstore.io/api/v1/package-metrics/AtomicStudio/Green_Screen'
     }
 
     total_downloads = 0
