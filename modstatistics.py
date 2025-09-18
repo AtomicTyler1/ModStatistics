@@ -20,6 +20,9 @@ STEAM_WORKSHOP_IDS = [
 ]
 
 def get_workshop_stats(ids):
+    """
+    Fetches statistics for Steam Workshop mods.
+    """
     url = "https://api.steampowered.com/IPublishedFileService/GetDetails/v1/"
     params = {
         'key': STEAM_API_KEY,
@@ -103,28 +106,39 @@ def get_and_upload():
             version_url = f'https://thunderstore.io/api/v1/package/{namespace}/{package_name}'
 
             metrics_response = requests.get(metrics_url)
-            metrics_response.raise_for_status()
-            metrics_data = metrics_response.json()
-
             version_response = requests.get(version_url)
-            version_response.raise_for_status()
-            version_data = version_response.json()
 
-            dls = metrics_data.get("downloads", 0)
-            ratings = metrics_data.get("rating_score", 0)
-            version = version_data.get("latest_version", "Unknown")
+            if metrics_response.ok and version_response.ok:
+                metrics_data = metrics_response.json()
+                version_data = version_response.json()
 
-            total_downloads += dls
-            total_ratings += ratings
+                dls = metrics_data.get("downloads", 0)
+                ratings = metrics_data.get("rating_score", 0)
+                version = version_data.get("latest_version", "Unavailable")
 
-            package_data[name] = {
-                "downloads": dls,
-                "ratings": ratings,
-                "version": version
-            }
+                total_downloads += dls
+                total_ratings += ratings
+
+                package_data[name] = {
+                    "downloads": dls,
+                    "ratings": ratings,
+                    "version": version
+                }
+            else:
+                print(f"⚠️ Failed to fetch data for {name}. Status codes: Metrics {metrics_response.status_code}, Version {version_response.status_code}")
+                package_data[name] = {
+                    "downloads": 0,
+                    "ratings": 0,
+                    "version": "Unavailable"
+                }
 
         except requests.RequestException as e:
-            print(f"⚠️ Error fetching {url}: {e}")
+            print(f"⚠️ Error fetching {name}: {e}")
+            package_data[name] = {
+                "downloads": 0,
+                "ratings": 0,
+                "version": "Unavailable"
+            }
 
     steam_stats = get_workshop_stats(STEAM_WORKSHOP_IDS)
     steam_downloads = sum(stats.get('downloads', 0) for title, stats in steam_stats.items() if title != "last_checked")
