@@ -144,7 +144,7 @@ def get_and_upload():
             total_ratings_bad += stats['negative ratings']
 
             steam_key = f"Steam - {title}"
-            stats.update(manual_mod_data.get(steam_key, {"community": "content-warning", "popular": False}))
+            stats.update(manual_mod_data.get(steam_key, {"community": "content-warning", "popular": False, "platform": "Steam"}))
             
             package_data[steam_key] = stats
 
