@@ -83,6 +83,29 @@ def get_and_upload():
         "Green Screen": 'https://thunderstore.io/api/v1/package-metrics/AtomicStudio/Green_Screen'
     }
 
+    manual_mod_data = {
+        "Better Shotgun Tooltip": {"community": "lethal-company-modding", "popular": True, "platform": "Thunderstore"},
+        "Moved Magnet Switch": {"community": "lethal-company-modding", "popular": False, "platform": "Thunderstore"},
+        "Atomics Cosmetics": {"community": "lethal-company-modding", "popular": True, "platform": "Thunderstore"},
+        "Colorable CozyLights": {"community": "lethal-company-modding", "popular": False, "platform": "Thunderstore"},
+        "Atomics Suits": {"community": "lethal-company-modding", "popular": False, "platform": "Thunderstore"},
+        "Breakable Windows": {"community": "content-warning", "popular": True, "platform": "Thunderstore"},
+        "Charging Divebell": {"community": "content-warning", "popular": True, "platform": "Thunderstore"},
+        "Toilet Paper Valuables": {"community": "repo", "popular": False, "platform": "Thunderstore"},
+        "Speedy Escalators": {"community": "peak-modding", "popular": False, "platform": "Thunderstore"},
+        "Atomics Cosmetics PEAK": {"community": "peak-modding", "popular": False, "platform": "Thunderstore"},
+        "Depleting Excess Extra Stamina": {"community": "peak-modding", "popular": False, "platform": "Thunderstore"},
+        "Green Screen": {"community": "peak-modding", "popular": True, "platform": "Thunderstore"},
+        "Steam - Breakable Glass": {"community": "content-warning", "popular": False, "platform": "Steam"},
+        "Steam - Charging Divebell \ud83d\udd0b": {"community": "content-warning", "popular": False, "platform": "Steam"},
+        "Steam - Configurable Film ( Infinite included )": {"community": "content-warning", "popular": True, "platform": "Steam"},
+        "Steam - Exit Confirmation": {"community": "content-warning", "popular": False, "platform": "Steam"},
+        "Steam - Divebell Oxygen Refill": {"community": "content-warning", "popular": False, "platform": "Steam"},
+        "Steam - SuitColors": {"community": "content-warning", "popular": False, "platform": "Steam"},
+        "Steam - More Visor Colors": {"community": "content-warning", "popular": True, "platform": "Steam"},
+        "Steam - Free Hospital Bills": {"community": "content-warning", "popular": False, "platform": "Steam"}
+    }
+
     total_downloads = 0
     total_ratings = 0
     total_ratings_bad = 0
@@ -105,6 +128,8 @@ def get_and_upload():
                 "ratings": ratings,
                 "version": version
             }
+            if name in manual_mod_data:
+                package_data[name].update(manual_mod_data[name])
 
         except requests.RequestException as e:
             print(f"⚠️ Error fetching {url}: {e}")
@@ -117,7 +142,11 @@ def get_and_upload():
         if title != "last_checked":
             total_ratings += stats['positive ratings']
             total_ratings_bad += stats['negative ratings']
-            package_data[f"Steam - {title}"] = stats
+
+            steam_key = f"Steam - {title}"
+            stats.update(manual_mod_data.get(steam_key, {"community": "content-warning", "popular": False}))
+            
+            package_data[steam_key] = stats
 
     timestamp = steam_stats["last_checked"]
     readable_time = datetime.fromtimestamp(timestamp).strftime('%d-%m-%Y %H:%M:%S')
