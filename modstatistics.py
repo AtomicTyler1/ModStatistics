@@ -84,26 +84,26 @@ def get_and_upload():
     }
 
     manual_mod_data = {
-        "Better Shotgun Tooltip": {"community": "lethal-company-modding", "popular": True, "platform": "Thunderstore"},
-        "Moved Magnet Switch": {"community": "lethal-company-modding", "popular": False, "platform": "Thunderstore"},
-        "Atomics Cosmetics": {"community": "lethal-company-modding", "popular": True, "platform": "Thunderstore"},
-        "Colorable CozyLights": {"community": "lethal-company-modding", "popular": False, "platform": "Thunderstore"},
-        "Atomics Suits": {"community": "lethal-company-modding", "popular": False, "platform": "Thunderstore"},
-        "Breakable Windows": {"community": "content-warning", "popular": True, "platform": "Thunderstore"},
-        "Charging Divebell": {"community": "content-warning", "popular": True, "platform": "Thunderstore"},
-        "Toilet Paper Valuables": {"community": "repo", "popular": False, "platform": "Thunderstore"},
-        "Speedy Escalators": {"community": "peak-modding", "popular": False, "platform": "Thunderstore"},
-        "Atomics Cosmetics PEAK": {"community": "peak-modding", "popular": False, "platform": "Thunderstore"},
-        "Depleting Excess Extra Stamina": {"community": "peak-modding", "popular": False, "platform": "Thunderstore"},
-        "Green Screen": {"community": "peak-modding", "popular": True, "platform": "Thunderstore"},
-        "Steam - Breakable Glass": {"community": "content-warning", "popular": False, "platform": "Steam"},
-        "Steam - Charging Divebell \ud83d\udd0b": {"community": "content-warning", "popular": False, "platform": "Steam"},
-        "Steam - Configurable Film ( Infinite included )": {"community": "content-warning", "popular": True, "platform": "Steam"},
-        "Steam - Exit Confirmation": {"community": "content-warning", "popular": False, "platform": "Steam"},
-        "Steam - Divebell Oxygen Refill": {"community": "content-warning", "popular": False, "platform": "Steam"},
-        "Steam - SuitColors": {"community": "content-warning", "popular": False, "platform": "Steam"},
-        "Steam - More Visor Colors": {"community": "content-warning", "popular": True, "platform": "Steam"},
-        "Steam - Free Hospital Bills": {"community": "content-warning", "popular": False, "platform": "Steam"}
+        "Better Shotgun Tooltip": {"community": "lethal-company-modding", "popular": True, "platform": "Thunderstore", "link": "https://thunderstore.io/c/lethal-company/p/AtomicStudio/Better_Shotgun_Tooltip/"},
+        "Moved Magnet Switch": {"community": "lethal-company-modding", "popular": False, "platform": "Thunderstore", "link": "https://thunderstore.io/c/lethal-company/p/AtomicStudio/Moved_Magnet_Switch/"},
+        "Atomics Cosmetics": {"community": "lethal-company-modding", "popular": True, "platform": "Thunderstore", "link": "https://thunderstore.io/c/lethal-company/p/AtomicStudio/Atomics_Cosmetics/"},
+        "Colorable CozyLights": {"community": "lethal-company-modding", "popular": False, "platform": "Thunderstore", "link": "https://thunderstore.io/c/lethal-company/p/AtomicStudio/Colorable_CozyLights/"},
+        "Atomics Suits": {"community": "lethal-company-modding", "popular": False, "platform": "Thunderstore", "link": "https://thunderstore.io/c/lethal-company/p/AtomicStudio/Atomics_Suits/"},
+        "Breakable Windows": {"community": "content-warning", "popular": True, "platform": "Thunderstore", "link": "https://thunderstore.io/c/content-warning/p/AtomicStudio/Breakable_Windows/"},
+        "Charging Divebell": {"community": "content-warning", "popular": True, "platform": "Thunderstore", "link": "https://thunderstore.io/c/content-warning/p/AtomicStudio/Charging_Divebell/"},
+        "Toilet Paper Valuables": {"community": "repo", "popular": False, "platform": "Thunderstore", "link": "https://thunderstore.io/c/repo/p/AtomicStudio/Toilet_Paper_Valuables/"},
+        "Speedy Escalators": {"community": "peak-modding", "popular": False, "platform": "Thunderstore", "link": "https://thunderstore.io/c/peak/p/AtomicStudio/Speedy_Escalators/"},
+        "Atomics Cosmetics PEAK": {"community": "peak-modding", "popular": False, "platform": "Thunderstore", "link": "https://thunderstore.io/c/peak/p/AtomicStudio/Atomics_Cosmetics_PEAK/"},
+        "Depleting Excess Extra Stamina": {"community": "peak-modding", "popular": False, "platform": "Thunderstore", "link": "https://thunderstore.io/c/peak/p/AtomicStudio/Depleting_Excess_Extra_Stamina/"},
+        "Green Screen": {"community": "peak-modding", "popular": True, "platform": "Thunderstore", "link": "https://thunderstore.io/c/peak/p/AtomicStudio/Green_Screen/"},
+        "Steam - Breakable Glass": {"community": "content-warning", "popular": False, "platform": "Steam", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3383270520"},
+        "Steam - Charging Divebell \ud83d\udd0b": {"community": "content-warning", "popular": False, "platform": "Steam", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3383837077"},
+        "Steam - Configurable Film ( Infinite included )": {"community": "content-warning", "popular": True, "platform": "Steam", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3385201967"},
+        "Steam - Exit Confirmation": {"community": "content-warning", "popular": False, "platform": "Steam", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3385250537"},
+        "Steam - Divebell Oxygen Refill": {"community": "content-warning", "popular": False, "platform": "Steam", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3386220143"},
+        "Steam - SuitColors": {"community": "content-warning", "popular": False, "platform": "Steam", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3386777900"},
+        "Steam - More Visor Colors": {"community": "content-warning", "popular": True, "platform": "Steam", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3389296239"},
+        "Steam - Free Hospital Bills": {"community": "content-warning", "popular": False, "platform": "Steam", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3400376437"}
     }
 
     total_downloads = 0
@@ -144,7 +144,7 @@ def get_and_upload():
             total_ratings_bad += stats['negative ratings']
 
             steam_key = f"Steam - {title}"
-            stats.update(manual_mod_data.get(steam_key, {"community": "content-warning", "popular": False, "platform": "Steam"}))
+            stats.update(manual_mod_data.get(steam_key, {"community": "content-warning", "popular": False, "platform": "Steam", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3383837077"}))
             
             package_data[steam_key] = stats
 
